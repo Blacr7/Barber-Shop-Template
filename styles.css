@@ -1,3 +1,36 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -17,15 +50,39 @@ body {
   font-size: 18px;
 }
 
+.pageLayout {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+}
+
 .header {
   width: 100%;
+  height: 15vh;
   background: #222222;
   color: #ffffff;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 .header .logo {
   font-family: 'Permanent Marker', cursive;
   font-size: 4em;
   font-weight: 500;
+  color: #ffffff;
+  line-height: 15vh;
+}
+
+.header .hamburgerMenu {
+  position: absolute;
+  left: 1em;
+}
+
+.header .hamburgerMenu .menu {
+  font-size: 4em;
+  color: #ffffff;
 }
 /*# sourceMappingURL=styles.css.map */

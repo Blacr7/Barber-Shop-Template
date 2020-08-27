@@ -1,5 +1,8 @@
 $white: #ffffff;
-$mainBlack : #222222;
+$mainBlack: #222222;
+$headerHeight: 15vh;
+
+@import '__variable.scss';
 
 *{
 	padding: 0;
@@ -19,15 +22,37 @@ body{
     font-size: 18px;
 }
 
+.pageLayout{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
 
 .header{
     width: 100%;
+    height: $headerHeight;
     background: $mainBlack;
     color: $white;
 
+    display: grid;
+    place-items: center;
     .logo{
         font-family: 'Permanent Marker', cursive;
         font-size: 4em;
         font-weight: 500;
+        color: $white;
+
+        
+        line-height: $headerHeight;
     }
+
+    .hamburgerMenu{
+        position: absolute;
+        left: 1em;
+        .menu{
+            font-size: 4em;
+            color: $white;
+        }
+    }
+    
 }
