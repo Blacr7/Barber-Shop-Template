@@ -1,0 +1,33 @@
+$white: #ffffff;
+$mainBlack : #222222;
+
+*{
+	padding: 0;
+	margin: 0;
+	background-repeat: no-repeat;
+	scroll-behavior: smooth;
+    box-sizing: border-box;
+	text-decoration: none;
+	position: relative;
+}
+
+body,html{
+	height:100%;
+}
+
+body{
+    font-size: 18px;
+}
+
+
+.header{
+    width: 100%;
+    background: $mainBlack;
+    color: $white;
+
+    .logo{
+        font-family: 'Permanent Marker', cursive;
+        font-size: 4em;
+        font-weight: 500;
+    }
+}
