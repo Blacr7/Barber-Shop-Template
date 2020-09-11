@@ -40,6 +40,7 @@
           box-sizing: border-box;
   text-decoration: none;
   position: relative;
+  list-style: none;
 }
 
 body, html {
@@ -50,6 +51,10 @@ body {
   font-size: 18px;
 }
 
+.header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .pageLayout {
   display: -ms-grid;
   display: grid;
@@ -58,7 +63,7 @@ body {
       grid-template-rows: 1fr 1fr auto;
 }
 
-.header {
+.theHeader {
   width: 100%;
   height: 15vh;
   background: transparent;
@@ -74,39 +79,37 @@ body {
   z-index: 1;
 }
 
-.header a {
+.theHeader a {
   color: #ffffff;
   text-shadow: -0.1em -0.1em rgba(0, 0, 0, 0.5);
-  font-family: 'verdana';
   -webkit-transition: all .8s;
   transition: all .8s;
 }
 
-.header a:hover {
+.theHeader a:hover {
   color: #968762;
 }
 
-.header .hamburgerMenu {
+.theHeader .hamburgerMenu {
   display: none;
   position: absolute;
   left: 1em;
 }
 
-.header .hamburgerMenu .menu {
+.theHeader .hamburgerMenu .menu {
   font-size: 2em;
   color: #ffffff;
 }
 
-.header ul li {
+.theHeader ul li {
   display: inline;
-  list-style: none;
 }
 
-.header ul li a {
+.theHeader ul li a {
   padding: 1em;
 }
 
-.header .logo {
+.theHeader .logo {
   text-transform: capitalize;
   font-size: 3em;
   font-weight: 400;
@@ -132,7 +135,6 @@ body {
 .landingPage .bookNow {
   color: #ffffff;
   text-shadow: -0.1em -0.1em rgba(0, 0, 0, 0.5);
-  font-family: 'verdana';
   -webkit-transition: all .8s;
   transition: all .8s;
   margin: 0 0 15vh;
@@ -166,16 +168,23 @@ body {
 }
 
 .services img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-position: end;
+     object-position: end;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / span 1.5;
+  height: 80vh;
+  padding: 1em 0;
 }
 
 .services .innerStyles {
-  width: 90%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2 / span 3;
+  width: 80%;
 }
 
-.services .h {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+.services .header {
   color: #000000;
   font-size: 3em;
   padding: 1em;
@@ -204,5 +213,65 @@ body {
 
 .services .innerUl li + li {
   text-align: end;
+}
+
+.footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  min-height: 30vh;
+  background: #222222;
+  color: #ffffff;
+  place-items: center;
+  text-align: center;
+}
+
+.footer .contactUs .logo {
+  font-size: 3em;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.footer .contactUs .logo:hover {
+  color: #968762;
+}
+
+.footer .contactUs .socialMedia {
+  padding: 1em 0;
+}
+
+.footer .contactUs .socialMedia li {
+  display: inline;
+  padding: 1em;
+}
+
+.footer .businessHours {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.footer .businessHours .header {
+  font-size: 2em;
+  padding: 0 .5em;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.footer .businessHours .header:hover {
+  color: #968762;
+}
+
+.footer .businessHours .hours {
+  text-align: start;
+}
+
+.footer .copyRight {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
 }
 /*# sourceMappingURL=styles.css.map */

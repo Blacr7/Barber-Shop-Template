@@ -9,10 +9,9 @@ $textShadow: -.1em -.1em rgba(0, 0, 0, .5);
 
 @import '__variable.scss';
 
-@mixin landingPageText {
+@mixin hoverText {
     color: $white;
     text-shadow: $textShadow;
-    font-family: 'verdana';
     transition: all .8s;
 
     &:hover{
@@ -27,7 +26,8 @@ $textShadow: -.1em -.1em rgba(0, 0, 0, .5);
 	scroll-behavior: smooth;
     box-sizing: border-box;
 	text-decoration: none;
-	position: relative;
+    position: relative;
+    list-style: none;
 }
 
 
@@ -39,13 +39,17 @@ body{
     font-size: 18px;
 }
 
+.header{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .pageLayout{
     display: grid;
     min-height: 100vh;
     grid-template-rows: 1fr 1fr auto;
 }
 
-.header{
+.theHeader{
     width: 100%;
     height: $headerHeight;
     background: transparent;
@@ -61,7 +65,7 @@ body{
     z-index: 1;
 
     a{
-        @include landingPageText();
+        @include hoverText();
     }
     
     .hamburgerMenu{
@@ -78,7 +82,6 @@ body{
     ul{
         li{
             display: inline;
-            list-style: none;
 
             a {
                 padding: 1em;
@@ -109,7 +112,7 @@ body{
     place-items: end center ;
 
     .bookNow{
-        @include landingPageText();
+        @include hoverText();
         margin: 0 0 $headerHeight;
         padding: 1em;
         background: $secondaryColor;
@@ -132,7 +135,7 @@ body{
     // }
 
     // .landingHeader{
-    //     @include landingPageText();
+    //     @include hoverText();
     //     font-size: 5em;
     //     line-height: 2em;
     //     text-transform: capitalize;
@@ -147,15 +150,18 @@ body{
     place-items: center;
 
     img{
-        object-fit: contain;
+        object-position: end;
+        grid-column: 1 / span 1.5;
+        height: 80vh;
+        padding: 1em 0;
     }
 
     .innerStyles{
-        width: 90%;
+        grid-column: 2 / span 3;
+        width: 80%;
     }
 
-    .h{
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    .header{
         color: $mainBlack;
         font-size: 3em;
         padding: 1em;
@@ -181,5 +187,61 @@ body{
         li + li {
             text-align: end;
         }
+    }
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 30vh;
+
+    background: $secondaryBlack;
+    color: $white;
+    place-items: center;
+    text-align: center;
+
+    .contactUs{
+
+        .logo{
+            font-size: 3em;
+            transition: all .8s;
+
+            &:hover{
+                color: $secondaryColor;
+            } 
+        }
+
+        .socialMedia{
+            padding: 1em 0;
+
+            li{
+                display: inline;
+                padding: 1em;
+            }
+        }
+    }
+
+    .businessHours{
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(2, 1fr);
+
+        .header{
+            font-size: 2em;
+            padding: 0 .5em;
+            transition: all .8s;
+
+            &:hover{
+                color: $secondaryColor;
+            } 
+        }
+
+        .hours{
+            text-align: start;
+        }
+    }
+    
+    .copyRight{
+        grid-column: 1/4;
     }
 }
