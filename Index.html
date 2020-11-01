@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="Styles/styles.css">
@@ -12,111 +12,181 @@
 <body>
     <div class="pageLayout">
         <div class="theHeader">
-    
-            <!-- <a href="javascript:void(0);" class="hamburgerMenu" onclick="hamburgerMenu()">
-                <i class="material-icons menu">menu</i>
-            </a> -->
+            
 
-            <nav>
-                <ul>
-                    <li class="navItems"><a href="#">About Us</a> </li>
-                    <li class="navItems"><a href="#">Services</a> </li>
-                    <li class="navItems"><a href="#">Contact</a> </li>
-                </ul>
-            </nav>
+
+            <div class="menu">
+                <nav class="innerMenu">
+                    <input type="checkbox" class="checkBox" id="check">
+                    <label for="check" class="hamburgerMenu">
+                        <span class="material-icons">menu</span>
+                    </label>
+                    <ul>
+                        <li class="navItems"><a href="#Services">Services</a> </li>
+                        <li class="navItems"><a href="#OurTeam">Team</a> </li>
+                        <li class="navItems"><a href="#ContactUs">Contact</a> </li>
+                        <li class="navItems"><a href="mailto:blacr7@mail.broward.edu">Mail@CrispCuts.com</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
             
             <a href="#" class="logo header">Crisp Cuts</a>
 
-            <div class="bookNow"><a href="#">(555)-123-1234</a></div>
+            <div class="bookNow"><a href="mailto:blacr7@mail.broward.edu">Mail@CrispCuts.com</a></div>
             
         </div>
 
         <div class="landingPage">
-            <!-- <div class="headerContainer">
-                <div class="landingHeader">Close Shaves</div>
-                <div class="landingHeader">Cheap Prices</div>
-                <div class="landingHeader">Pro-Power</div>
-            </div> -->
             <a class="bookNow" href="">Book Now</a>
         </div>
+        
+        <div class="services" id="Services">
+            <img src="Assets/Chair.jpg" alt="Barbers Chair">
+            <div class="innerStyles">
+                <h3 class="header"><span>Our</span><span> Services</span>  </h3>
 
-        <div class="center">
-            <div class="services">
-                <img src="Assets/Chair.jpg" alt="Barbers Chair">
-                <div class="innerStyles">
-                    <h3 class="header">Our Services</h3>
-
-                    <ul class="servicesUl">
-                        <div class="innerUl">
-                            <li>Haircut</li>
-                            <li>$20</li>
-                        </div>
-                        <div class="innerUl">
-                            <li>Beard Trim</li>
-                            <li>$12</li>
-                        </div>
-                        <div class="innerUl">
-                            <li>Head Shave</li>
-                            <li>$18</li>
-                        </div>
-                        <div class="innerUl">
-                            <li>Students & Seniors</li>
-                            <li>$3 Off</li>
-                        </div>
-                    </ul>
-                </div>
-                
+                <ul class="servicesUl">
+                    <div class="innerUl">
+                        <span class="material-icons">event_seat</span>
+                        <li>Haircut</li>
+                        <li>$20</li>
+                    </div>
+                    <div class="innerUl">
+                        <span class="material-icons">content_cut</span>
+                        <li>Beard Trim</li>
+                        <li>$12</li>
+                    </div>
+                    <div class="innerUl">
+                        <span class="material-icons">child_care</span>
+                        <li>Head Shave</li>
+                        <li>$18</li>
+                    </div>
+                    <div class="innerUl">
+                        <span class="material-icons">attach_money</span>
+                        <li>Students & Seniors</li>
+                        <li>$3 Off</li>
+                    </div>
+                </ul>
             </div>
+            
         </div>
 
-        <div class="footer">
-            <div class="contactUs">
-                <div class="logo header">Crisp Cuts</div>
-                <ul class="socialMedia">
-                    <li>Facebook</li>
-                    <li>Instagram</li>
-                    <li>Twitter</li>
-                    <li>Linkedin</li>
+        <div class="quotes">
+            <span id="quote-1"></span>
+            <span id="quote-2"></span>
+            <span id="quote-3"></span>
+
+            <svg  xmlns="http://www.w3.org/2000/svg" class="topWave" viewBox="0 0 1440 320"><path  class="innerTopWave" fill="#212121" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
+            <h3 class="header"><span>Our</span><span> Clients</span>  </h3>
+
+            <div class="innerQuotes">
+                <div class="quote">
+                    <p>To make a fine gentleman, several trades are required, but chiefly one of these barbers.</p>
+
+                    <p>- Oliver Goldsmith</p>
+                </div>
+                <div class="quote">
+                    <p>Whatever you hear at this barber shop, stays at this barber shop. </p>
+                    <p>- Bernie Mac</p>
+                </div>
+                <div class="quote">
+                    <p>This Barbershop is not a hobby, it's a lifestyle. </p>
+                    <p>- Harvey Feldman</p>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a href="#quote-1" class="button"></a>
+                <a href="#quote-2" class="button"></a>
+                <a href="#quote-3" class="button"></a>
+            </div>
+            
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="botWave" viewBox="0 0 1440 320"><path fill="#212121" fill-opacity="1" d="M0,96L30,96C60,96,120,96,180,112C240,128,300,160,360,176C420,192,480,192,540,181.3C600,171,660,149,720,165.3C780,181,840,235,900,218.7C960,203,1020,117,1080,80C1140,43,1200,53,1260,69.3C1320,85,1380,107,1410,117.3L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+        </div>
+
+        <div class="ourTeam" id="OurTeam">
+            <h3 class="header"><span>Our</span><span> Team</span>  </h3>
+
+            <div class="barbers">
+                <div class="barber"><img src="Assets/Team/male-1.jpg" alt=""> <span>John</span><span> Doe</span></div>
+                <div class="barber"><img src="Assets/Team/male-2.jpg" alt=""><span>Rudy</span><span> Barber</span></div>
+                <div class="barber"><img src="Assets/Team/female-1.jpg" alt=""><span>Jane</span><span> Doe</span></div>
+                <div class="barber"><img src="Assets/Team/male-3.jpg" alt=""><span>Adam</span><span> Apples</span></div>
+                <div class="barber"><img src="Assets/Team/female-2.jpg" alt=""><span>Eve</span><span> Apples</span></div>
+                <div class="barber"><img src="Assets/Team/male-4.jpg" alt=""><span>Dan</span><span> Doe</span></div>
+            </div>
+            
+        </div>
+
+        <div class="ourWork">
+            <h3 class="header"><Span>Our</Span><Span> Work</Span></h3>
+            <div class="pictures">
+                <img class="imageDisplay" src="Assets/HairCut1.jpg" alt="" loading="lazy">
+                <img class="imageDisplay" src="Assets/Cut.jpg" alt="" loading="lazy">
+                <img class="imageDisplay" src="Assets/test.jpg" alt="" loading="lazy">
+                <img class="imageDisplay" src="Assets/HairCut2.jpg" alt="" loading="lazy">
+                <img class="imageDisplay" src="Assets/HairCut3.jpg" alt="" loading="lazy">
+                <img class="imageDisplay" src="Assets/HairCut4.jpg" alt="" loading="lazy">
+            </div>
+            
+        </div>
+
+        <div class="footer" id="ContactUs">
+            <div class="socialMedia">
+                <h3 class="logo header"><span>Crisp</span><span> Cuts</span>  </h3>
+                <ul class="innerSocialMedia">
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">Twitter</a></li>
+                    <li><a href="">Linkedin</a></li>
                 </ul>
             </div>
 
             <div class="businessHours">
-                <div class="header">Hours</div>
+                <h3 class="header"><span>Our</span><span> Hours</span></h3>
 
                 <ul class="hours">
                     <div class="innerHours">
                         <li>Monday</li>
-                        <li></li>
+                        <li>10:00 AM — 6:00 PM</li>
                     </div>
                     <div class="innerHours">
                         <li>Tuesday</li>
-                        <li></li>
+                        <li>10:00 AM — 6:00 PM</li>
                     </div>
                     <div class="innerHours">
                         <li>Wednesday</li>
-                        <li></li>
+                        <li>10:00 AM — 6:00 PM</li>
                     </div>
                     <div class="innerHours">
                         <li>Thursday</li>
-                        <li></li>
+                        <li>10:00 AM — 6:00 PM</li>
                     </div>
                     <div class="innerHours">
                         <li>Friday</li>
-                        <li></li>
+                        <li>10:00 AM — 6:00 PM</li>
                     </div>
                     <div class="innerHours">
                         <li>Saturday</li>
-                        <li></li>
+                        <li>10:00 AM — 6:00 PM</li>
                     </div>
                     <div class="innerHours">
                         <li>Sunday</li>
-                        <li></li>
+                        <li>11:00 AM — 5:00 PM</li>
                     </div>
                 </ul>
 
             </div>
 
-            <div class="copyRight">@2020 All rights Reserved</div>
+            <div class="contactUs">
+                <div class="copyRight">@2020 All rights Reserved</div>
+                <div> 236  Raver Croft Dr Chattanooga, TN</div>
+                <div> (555)-123-1234</div>
+            </div>
+            
         </div>
     </div>
 

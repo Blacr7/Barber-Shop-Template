@@ -1,23 +1,4 @@
-$white: #ffffff;
-$mainBlack: #000000;
-$secondaryBlack: #222222;
-$secondaryColor: #968762;
-
-$headerHeight: 15vh;
-$shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.5);
-$textShadow: -.1em -.1em rgba(0, 0, 0, .5);
-
 @import '__variable.scss';
-
-@mixin hoverText {
-    color: $white;
-    text-shadow: $textShadow;
-    transition: all .8s;
-
-    &:hover{
-        color: $secondaryColor;
-    } 
-}
 
 *{
 	padding: 0;
@@ -37,16 +18,24 @@ body,html{
 
 body{
     font-size: 18px;
+    font-family: 'Source Serif Pro', serif;
 }
 
 .header{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana;
+    font-size: 3em;
+    text-align: center;
 }
 
 .pageLayout{
     display: grid;
     min-height: 100vh;
-    grid-template-rows: 1fr 1fr auto;
+    grid-template-rows: auto 1fr auto auto;
+    overflow-x: hidden;
+
+    span + span {
+        color: $secondaryColor;
+    }
 }
 
 .theHeader{
@@ -62,7 +51,7 @@ body{
     gap: 1em;
     grid-template-columns: repeat(3, 1fr);
     position: absolute;
-    z-index: 1;
+    z-index: 3;
 
     a{
         @include hoverText();
@@ -70,22 +59,32 @@ body{
     
     .hamburgerMenu{
         display:none;
-
         position: absolute;
         left: 1em;
-        .menu{
+        margin: 2em;
+        color: $mainWhite;
+        cursor: pointer;
+        z-index: 3;
+
+        .material-icons{
             font-size: 2em;
-            color: $white;
         }
+    }
+
+    #check{
+        display: none;
     }
 
     ul{
         li{
             display: inline;
-
             a {
                 padding: 1em;
             }
+        }
+
+        li:last-child{
+            display: none;
         }
     }
 
@@ -93,9 +92,10 @@ body{
         text-transform: capitalize;
         font-size: 3em;
         font-weight: 400;
-        color: $white;
+        color: $mainWhite;
         padding: 0;
         font-style: italic;
+        cursor: default;;
     }
 }
 
@@ -104,7 +104,7 @@ body{
     width: 99vw;
     background-color: $mainBlack;
     background-image: url('../Assets/Tools.jpeg');
-    background-position: top center;
+    background-position: center;
     background-size: cover;
 
     display: grid;
@@ -120,40 +120,33 @@ body{
         box-shadow: $shadow;
         text-shadow: unset;
         font-size: 1.5em;
+        font-family: Verdana;
 
         &:hover{
             box-shadow: inset $shadow;
             transform: scale(.95);
-            color: $white;
-            border-radius: 10%;
-            
+            color: $mainBlack;
+            border-radius: 20%;
         }
     }
-
-    // .headerContainer{
-    //     height: 50%;
-    // }
-
-    // .landingHeader{
-    //     @include hoverText();
-    //     font-size: 5em;
-    //     line-height: 2em;
-    //     text-transform: capitalize;
-    //     font-weight: 500;
-    //     padding: 0 1em;
-    // }
 }
 
 .services{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
+    padding: 1em 0 0;
     place-items: center;
+    background-color: $mainWhite;
+    font-weight: 700;
+    z-index: 2;
 
     img{
         object-position: end;
         grid-column: 1 / span 1.5;
         height: 80vh;
-        padding: 1em 0;
+        padding: 1em 0 0;
+        border-radius: 20%;
+        filter:drop-shadow(3px 6px 8px rgba(0,0,0,0.5));
     }
 
     .innerStyles{
@@ -163,9 +156,7 @@ body{
 
     .header{
         color: $mainBlack;
-        font-size: 3em;
         padding: 1em;
-        text-align: center;
     }
 
     .servicesUl{
@@ -175,73 +166,348 @@ body{
 
     .innerUl{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(10, 1fr);
+        margin-bottom: 1em;;
+        padding-bottom: .5em;
+        border-bottom: dotted 2px $secondaryColor;
         
         li{
            display: inline;
            text-align: start;
            font-size: 1.2em;
-           color: $secondaryBlack;
+        }
+
+        .material-icons{
+            grid-column: 1/ 1;
+            text-align: center;
+        }
+
+        li:nth-child(2){
+            grid-column: 2/ span 4;
+            
         }
 
         li + li {
             text-align: end;
+            grid-column: 6 / -1;
+            color: $secondaryColor;
+        }
+    }
+
+}
+
+.ourTeam{
+    display: grid;
+    place-items: center;
+    background: $mainWhite;
+    margin: -10% 0 0;
+    padding: 0 0 2em;
+
+    .header{
+        padding: 0 0 1em;
+    }
+
+    .barbers{
+        display: grid;
+        gap: 5vh 10vw;
+        grid-template-columns: repeat(3, 1fr);
+
+        .barber{
+            text-align: center;
+            font-weight: 900;
+           img{
+               height: 20em;
+               margin: 0 0 1em 0;
+               display: block;
+
+               border-radius: 20%;
+               filter: grayscale(100%);
+               box-shadow: 3px 6px 8px rgba(0,0,0,0.3);
+           }
         }
     }
 }
 
+.quotes{
+    //background: #FBEACA;
+    color: $secondaryWhite;
+
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+
+    min-height: 30vh;
+    width: 100vw;
+    top: -10vh;
+
+    .header{
+        background-color: $secondaryBlack;
+        z-index: 2;
+        
+        padding: .5em;
+    }
+
+    .innerQuotes{
+        z-index: 2;
+        width: 300vw;
+        transition: left 2s;
+
+        .quote{
+            background-color: $secondaryBlack;
+            float: left;
+            width: 100vw;
+            padding: 0 0 1em;
+            font-size: 1.2em;
+            line-height: 2em;
+            transition: left 2s;
+        }
+    }
+    
+    .buttons{
+        z-index: 2;
+        .button{
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            margin: .5em;
+            background-color: $mainWhite;
+        }
+    }
+
+    #quote-1:target ~ .innerQuotes{
+        left: 0;
+    }
+    #quote-2:target ~ .innerQuotes{
+        left: -100vw;
+    }
+    #quote-3:target ~ .innerQuotes{
+        left: -200vw;
+    }
+    
+    .topWave{
+        background-color: $mainWhite;
+        bottom: -8vh;
+    }
+
+    .botWave{
+        background-color: $mainWhite;
+        top: -10vh;
+    }
+}
+
+.ourWork{
+    background-color: $secondaryWhite;
+    padding: 0 0 3em;
+
+    .header{
+        padding: 1em;
+    }
+
+    .pictures{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .imageDisplay{
+            flex: 0 0 500px;
+            width: 22%;
+            margin: 2em;
+            filter: grayscale(100%) drop-shadow(3px 6px 8px rgba(0,0,0,0.5));
+            border-radius: 20%;
+
+            &:nth-child(odd){
+                transform: rotate(-.03turn);
+            }
+
+            &:nth-child(even){
+                transform: rotate(.01turn);
+            }
+        }
+
+    }
+}
+
+
 .footer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    min-height: 30vh;
+    min-height: 40vh;
 
     background: $secondaryBlack;
-    color: $white;
+    color: $mainWhite;
     place-items: center;
-    text-align: center;
+    
 
-    .contactUs{
+    .socialMedia{
+        text-align: center;
 
         .logo{
             font-size: 3em;
             transition: all .8s;
-
-            &:hover{
-                color: $secondaryColor;
-            } 
         }
 
-        .socialMedia{
+        .innerSocialMedia{
             padding: 1em 0;
 
             li{
                 display: inline;
-                padding: 1em;
+                padding: 1em; 
+            }
+
+            a{
+                color: $mainWhite;
+                transition: all .8s;
+
+                &:hover{
+                    color: $secondaryColor;
+                } 
             }
         }
     }
 
     .businessHours{
-        display: grid;
-        place-items: center;
-        grid-template-columns: repeat(2, 1fr);
-
         .header{
-            font-size: 2em;
-            padding: 0 .5em;
+            font-size: 3em;
             transition: all .8s;
-
-            &:hover{
-                color: $secondaryColor;
-            } 
         }
 
         .hours{
-            text-align: start;
+            width: 50%;
+            margin: auto;
+            padding: 1em  0 0;
+
+            .innerHours{
+                width: 100%;
+                line-height: 1.4em;
+                display: inline-flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
         }
     }
     
-    .copyRight{
+    .contactUs{
         grid-column: 1/4;
+        display: inline-flex;
+        width: 100vw;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .theHeader{
+        grid-template-columns: repeat(1, 1fr);
+
+        .hamburgerMenu{
+            display: block;
+        }
+
+        ul{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: rgba($secondaryBlack, .7);
+            left: -100%;
+            transition: all .5s;
+            text-align: center;
+            
+            li, li:last-child{
+                display: block;
+                top: 25%;
+            }
+        }
+
+        .bookNow{
+            display: none;
+        }
+
+        #check:checked ~ ul{
+            left: 0;
+            overflow: hidden;
+        }
+
+        #check:checked ~ .hamburgerMenu{
+            position: fixed;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 1024px){
+
+    .services{
+        padding: 10vh 0 0;
+        grid-template-columns: repeat(3, 1fr);
+        
+        .innerStyles{
+            grid-column: 1 / span 3;
+        }
+
+        .header{
+            padding: 1em 0;
+        }
+
+        img{
+            height: 50vh;
+            grid-column: 1 / span 3;
+        }
+    }
+
+    .quotes{
+        top: unset;
+        background-color: $secondaryBlack;
+        padding: 5vh 0;
+        margin: 5vh 0;
+        .topWave{
+            
+            display: none;
+        }
+        .botWave{
+            background-color: $secondaryBlack;
+            display: none;
+        }
+    }
+
+    .ourTeam{
+        place-items: unset;
+        margin: unset;
+        .barbers{
+            grid-template-columns: repeat(auto-fit, minmax(356px, 1fr));
+
+            .barber{
+                img{
+                    height: 25em;
+                    margin: auto auto 1em;
+                }
+            }
+        }
+    }
+
+    .footer{
+        padding: 1em 0;
+
+        .socialMedia, .businessHours, .contactUs{
+            grid-column: 1/-1;
+            padding: 1.5em 0;
+        }
+
+        .businessHours{
+            .hours{
+                text-align: center;
+                .innerHours{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .theHeader{
+        .hamburgerMenu{
+            margin: 2em 0em;
+        }
     }
 }

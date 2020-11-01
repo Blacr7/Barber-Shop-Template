@@ -1,3 +1,25 @@
+$mainWhite: #ffffff;
+$secondaryWhite: #F5F5F5;
+$mainBlack: #000000;
+$secondaryBlack: #212121;
+$secondaryColor: #AFA27B;
+
+$headerHeight: 15vh;
+$shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.5);
+$textShadow: -.1em -.1em rgba(0, 0, 0, .5);
+
+
+@mixin hoverText {
+  color: $secondaryWhite;
+  text-shadow: $textShadow;
+  transition: all .8s;
+  font-weight: 900;
+  &:hover{
+      color: $secondaryColor;
+      transform: scale(.95);
+  } 
+}
+
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
@@ -33,4 +55,4 @@
   
     /* Support for IE. */
     font-feature-settings: 'liga';
-  }
+}
