@@ -101,7 +101,7 @@ body{
 
 .landingPage{
     height: 100vh;
-    width: 99vw;
+    width: 100vw;
     background-color: $mainBlack;
     background-image: url('../Assets/Tools.jpeg');
     background-position: center;
@@ -215,6 +215,7 @@ body{
         .barber{
             text-align: center;
             font-weight: 900;
+            
            img{
                height: 20em;
                margin: 0 0 1em 0;
@@ -256,7 +257,7 @@ body{
             background-color: $secondaryBlack;
             float: left;
             width: 100vw;
-            padding: 0 0 1em;
+            padding: 0 .5em 1em;
             font-size: 1.2em;
             line-height: 2em;
             transition: left 2s;
@@ -402,6 +403,7 @@ body{
 
         .hamburgerMenu{
             display: block;
+            z-index: 4;
         }
 
         ul{
@@ -412,7 +414,8 @@ body{
             left: -100%;
             transition: all .5s;
             text-align: center;
-            
+            z-index: 3;
+
             li, li:last-child{
                 display: block;
                 top: 25%;
@@ -505,9 +508,51 @@ body{
 }
 
 @media only screen and (max-width: 768px){
+    body{
+        font-size: 16px;
+    }
+
     .theHeader{
         .hamburgerMenu{
-            margin: 2em 0em;
+            margin: .5em 0em;
         }
+
+        .logo{
+            margin: 1em 0 0;
+        }
+    }
+
+    .ourTeam{
+        .barbers{
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            .barber{
+                img{
+                    height: 15em;
+                }
+            }
+        }
+    }
+
+    .ourWork{
+        .pictures{
+            .imageDisplay{
+                flex: 0 0 15em;
+            }
+        }
+    }
+
+    .footer{
+        .businessHours{
+            .hours{
+                width: 90%;
+            }
+        }
+    }
+
+    .contactUs{
+        div{
+           padding: .5em; 
+        }
+        
     }
 }
