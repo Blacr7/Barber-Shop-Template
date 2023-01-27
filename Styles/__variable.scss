@@ -12,8 +12,9 @@ $textShadow: -.1em -.1em rgba(0, 0, 0, .5);
 @mixin hoverText {
   color: $secondaryWhite;
   text-shadow: $textShadow;
-  transition: all .8s;
+  transition: all .5s ease-in-out;
   font-weight: 900;
+
   &:hover{
       color: $secondaryColor;
       transform: scale(.95);
